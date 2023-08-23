@@ -3,13 +3,8 @@ package br.com.JSF;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.component.html.HtmlCommandButton;
 
-@ViewScoped
-@ManagedBean(name = "pessoaBean")
 public class PessoaBean {
 	
 	private String nome;
@@ -67,3 +62,4 @@ public class PessoaBean {
 		this.sobrenome = sobrenome;
 	}
 }
+
