@@ -14,6 +14,14 @@ public class PessoaBean {
 	private String nome;
 	private String sobrenome;
 	private String nomeCompleto;
+	private String senha;
+	
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	private List<String> nomes = new ArrayList<String>();
 	
 	public String addNome() {
@@ -21,8 +29,8 @@ public class PessoaBean {
 		
 		if(nomes.size() > 2) {
 			commandButton.setDisabled(true);
+			return "paginanavegada";
 		}
-		
 		return "";
 	}
 	

@@ -7,9 +7,14 @@
 <h:body>
 	<p>Olá JSF</p>
 	<h:form id="formPessoa">
+		Nome:
 		<h:inputText id="campoNome" value="#{pessoaBean.nome}"/><br/>
+		Sobrenome:
 		<h:inputText id="campoSobrenome" value="#{pessoaBean.sobrenome}"/><br/>
+		Nome completo:
 		<h:outputText value="#{pessoaBean.nomeCompleto}"/><br/>
+		Senha:
+		<h:inputSecret id="senha" value="#{pessoaBean.senha}"/>
 		<h:commandButton binding="#{pessoaBean.commandButton}" value="Adicionar nome" action="#{pessoaBean.addNome}"/>		
 		<h:commandButton value="Mostrar nome completo" action="#{pessoaBean.mostrarNomeCompleto}"/>
 		<h:dataTable value="#{pessoaBean.nomes}" var="nome">
@@ -17,6 +22,7 @@
 				<h:outputText value="#{nome}"/>
 			</h:column>
 		</h:dataTable>
+		<h:commandButton value="Navegação explicita" action="explicita"/>
 	</h:form>
 </h:body>	
 </html>
