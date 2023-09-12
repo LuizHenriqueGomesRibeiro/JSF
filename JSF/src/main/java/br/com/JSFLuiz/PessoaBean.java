@@ -15,25 +15,27 @@ public class PessoaBean {
 	private String sobrenome;
 	private String nomeCompleto;
 	private String senha;
-	
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	private List<String> nomes = new ArrayList<String>();
-	
+
 	public String addNome() {
 		nomes.add(nome);
-		
-		if(nomes.size() > 2) {
+
+		if (nomes.size() > 2) {
 			commandButton.setDisabled(true);
 			return "paginanavegada";
 		}
 		return "";
 	}
-	
+
 	public HtmlCommandButton getCommandButton() {
 		return commandButton;
 	}
@@ -45,28 +47,36 @@ public class PessoaBean {
 	public List<String> getNomes() {
 		return nomes;
 	}
+
 	public void setNomes(List<String> nomes) {
 		this.nomes = nomes;
 	}
+
 	public String mostrarNomeCompleto() {
 		nomeCompleto = nome + " " + sobrenome;
 		return nomeCompleto;
 	}
+
 	public String getNomeCompleto() {
 		return nomeCompleto;
 	}
+
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getSobrenome() {
 		return sobrenome;
 	}
+
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
