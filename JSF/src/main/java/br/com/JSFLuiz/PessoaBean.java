@@ -1,83 +1,32 @@
 package br.com.JSFLuiz;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.component.html.HtmlCommandButton;
+
+import br.com.dao.DaoGeneric;
+import br.com.entidades.Pessoa;
 
 @ViewScoped
 @ManagedBean(name = "pessoaBean")
 public class PessoaBean {
-	private HtmlCommandButton commandButton;
-	private String nome;
-	private String sobrenome;
-	private String nomeCompleto;
-	private String senha;
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	private List<String> nomes = new ArrayList<String>();
-
-	public String addNome() {
-		nomes.add(nome);
-
-		if (nomes.size() > 2) {
-			commandButton.setDisabled(true);
-			return "paginanavegada";
-		}
+	private Pessoa pessoa = new Pessoa();
+	private DaoGeneric<Pessoa> daoGeneric = new DaoGeneric<Pessoa>();
+	
+	public String salvar() {
+		daoGeneric.salvar(pessoa);
 		return "";
 	}
 
-	public HtmlCommandButton getCommandButton() {
-		return commandButton;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
-
-	public void setCommandButton(HtmlCommandButton commandButton) {
-		this.commandButton = commandButton;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
-
-	public List<String> getNomes() {
-		return nomes;
+	public DaoGeneric<Pessoa> getDaoGeneric() {
+		return daoGeneric;
 	}
-
-	public void setNomes(List<String> nomes) {
-		this.nomes = nomes;
-	}
-
-	public String mostrarNomeCompleto() {
-		nomeCompleto = nome + " " + sobrenome;
-		return nomeCompleto;
-	}
-
-	public String getNomeCompleto() {
-		return nomeCompleto;
-	}
-
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+	public void setDaoGeneric(DaoGeneric<Pessoa> daoGeneric) {
+		this.daoGeneric = daoGeneric;
 	}
 }
