@@ -88,11 +88,13 @@
 =======
 		<h1>Olá JSF</h1>
 		<h:outputLabel value="Nome:"/>
-		<h:inputText value="#{pessoaBean.pessoa.nome}"/><br/>
+		<h:inputText value="#{pessoaBean.pessoa.nome}"/>
 		<h:outputLabel value="Sobrenome:"/>
-		<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/><br/>
+		<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/>
 		<h:outputLabel value="Idade:"/>
-		<h:inputText value="#{pessoaBean.pessoa.idade}"/><br/>
+		<h:inputText value="#{pessoaBean.pessoa.idade}"/>
+		<h:outputLabel value="Data de nascimento:"/>
+		<h:inputText value="#{pessoaBean.pessoa.dataNascimento}"/>
 		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"/>
 >>>>>>> 60bf180 comitar final do dia
 	</h:form>
