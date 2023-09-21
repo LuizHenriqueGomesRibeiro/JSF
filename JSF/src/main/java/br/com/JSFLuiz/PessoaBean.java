@@ -1,6 +1,5 @@
 package br.com.JSFLuiz;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -22,8 +21,6 @@ public class PessoaBean {
 	
 	public String salvar() {
 		daoGeneric.salvar(pessoa);
-		pessoa = new Pessoa();
-		carregarPessoas();
 		return "";
 	}
 	
@@ -64,6 +61,5 @@ public class PessoaBean {
 	public void setPessoas(List<Pessoa> pessoas) {
 		this.pessoas = pessoas;
 	}
-	
 }
 
