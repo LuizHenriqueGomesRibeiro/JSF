@@ -67,21 +67,16 @@ public class PessoaBean {
 	public void setDaoGeneric(DaoGeneric<Pessoa> daoGeneric) {
 		this.daoGeneric = daoGeneric;
 	}
-
 	public DaoGeneric<Usuario> getDaoGenericUsuario() {
 		return daoGenericUsuario;
 	}
-
 	public void setDaoGenericUsuario(DaoGeneric<Usuario> daoGenericUsuario) {
 		this.daoGenericUsuario = daoGenericUsuario;
 	}
-
 	public List<Pessoa> getPessoas() {
 		return pessoas;
 	}
-
 	public void setPessoas(List<Pessoa> pessoas) {
 		this.pessoas = pessoas;
 	}
-	
 }
