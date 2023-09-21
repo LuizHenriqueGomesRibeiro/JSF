@@ -22,65 +22,38 @@ public class Pessoa implements Serializable {
 	private Integer idade;
 	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
-	private String sexo;
-	private String[] frameworks;
-	
-	public String[] getFrameworks() {
-		return frameworks;
-	}
-
-	public void setFrameworks(String[] frameworks) {
-		this.frameworks = frameworks;
-	}
-
-	public String getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
 
 	public Pessoa() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 	public String getSobrenome() {
 		return sobrenome;
 	}
-
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-
 	public Integer getIdade() {
 		return idade;
 	}
-
 	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
-
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
-
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
@@ -102,3 +75,4 @@ public class Pessoa implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 }
+
