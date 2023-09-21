@@ -3,7 +3,6 @@
 	<persistence-unit name="JSF">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.com.entidades.Pessoa</class>
-		<class>br.com.entidades.Usuario</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/JSF"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
