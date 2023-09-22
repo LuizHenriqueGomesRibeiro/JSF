@@ -22,24 +22,6 @@ public class Pessoa implements Serializable {
 	private Integer idade;
 	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
-	private String sexo;
-	private String[] frameworks;
-	
-	public String[] getFrameworks() {
-		return frameworks;
-	}
-
-	public void setFrameworks(String[] frameworks) {
-		this.frameworks = frameworks;
-	}
-
-	public String getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
 
 	public Pessoa() {
 		// TODO Auto-generated constructor stub

@@ -7,87 +7,68 @@
 	<title>Olá JSF</title>
 </h:head>
 <h:body>
-	<h:graphicImage height="70" width="70" 
-	value="https://cdn.pixabay.com/photo/2017/09/25/15/37/hurry-up-2785528_640.png"/>
 	<h:form id="formPessoa">
 		<h:panelGrid columns="2">
-			<h:outputLabel value="Id:"/>
-			<h:inputText readonly="true" value="#{pessoaBean.pessoa.id}"/>
+			<h:outputLabel value="Id:" />
+			<h:inputText readonly="true" value="#{pessoaBean.pessoa.id}" />
 
-			<h:outputLabel value="Nome:"/>
-			<h:inputText value="#{pessoaBean.pessoa.nome}"/>
+			<h:outputLabel value="Nome:" />
+			<h:inputText value="#{pessoaBean.pessoa.nome}" />
 
-			<h:outputLabel value="Sobrenome:"/>
-			<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/>
+			<h:outputLabel value="Sobrenome:" />
+			<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
 
-			<h:outputLabel value="Idade:"/>
-			<h:inputText value="#{pessoaBean.pessoa.idade}"/>
+			<h:outputLabel value="Idade:" />
+			<h:inputText value="#{pessoaBean.pessoa.idade}" />
 
-			<h:outputLabel value="Login:"/>
-			<h:inputText value="#{pessoaBean.usuario.login}"/>
+			<h:outputLabel value="Login:" />
+			<h:inputText value="#{pessoaBean.usuario.login}" />
 
-			<h:outputLabel value="Senha:"/>
-			<h:inputText value="#{pessoaBean.usuario.senha}"/>
-			
-			<h:outputLabel value="Sexo:"/>
-			<h:selectOneMenu value="#{pessoaBean.pessoa.sexo}" required="true">
-				<f:selectItem itemValue="-" itemLabel="[-Selecione-]" noSelectionOption="true"/>
-				<f:selectItem itemValue="MASCULINO" itemLabel="Masculino"/>
-				<f:selectItem itemValue="FEMININO" itemLabel="Feminino"/>
-			</h:selectOneMenu>
-			
-			<h:outputLabel value="Frameworks:"/>
-			<h:selectManyMenu value="#{pessoaBean.pessoa.frameworks}" required="true" style="height:150px;">
-				<f:selectItem itemValue="-" itemLabel="[-Selecione-]" noSelectionOption="true"/>
-				<f:selectItem itemValue="Hibernate"/>
-				<f:selectItem itemValue="JSF"/>
-				<f:selectItem itemValue="Spring"/>
-				<f:selectItem itemValue="PrimeFaces"/>
-			</h:selectManyMenu>	
+			<h:outputLabel value="Senha:" />
+			<h:inputText value="#{pessoaBean.usuario.senha}" />
 		</h:panelGrid>
 		<h:outputLabel/>
 		<h:panelGroup>
-			<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"/>
-			<h:commandButton value="Atualizar" action="#{pessoaBean.merge}"/>
-			<h:commandButton value="Limpar campos" action="#{pessoaBean.limpar}"/>
-			<h:commandButton value="Deletar registro" action="#{pessoaBean.deletar}"/>
+			<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+			<h:commandButton value="Merge" action="#{pessoaBean.merge}" />
+			<h:commandButton value="Limpar campos" action="#{pessoaBean.limpar}" />
+			<h:commandButton value="Deletar registro" action="#{pessoaBean.deletar}" />
 		</h:panelGroup>
-		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="2" cellpadding="3">
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="2">
 			<f:facet name="header">
 				Lista de pessoas cadastradas	
 			</f:facet>
 			<h:column>
 				<f:facet name="header">Id</f:facet>
-				<h:outputText value="#{pessoa.id}"/>
+				<h:outputText value="#{pessoa.id}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{pessoa.nome}"/>
+				<h:outputText value="#{pessoa.nome}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Sobrenome</f:facet>
-				<h:outputText value="#{pessoa.sobrenome}"/>
+				<h:outputText value="#{pessoa.sobrenome}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Idade</f:facet>
-				<h:outputText value="#{pessoa.idade}"/>
+				<h:outputText value="#{pessoa.idade}" />
 			</h:column>
 			<h:column>
-				<f:facet name="header">Editar</f:facet>
+				<f:facet name="header">Configurações</f:facet>
 				<h:commandLink value="Editar">
-					<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}" />
+					<f:setPropertyActionListener value="#{pessoa}"
+						target="#{pessoaBean.pessoa}" />
 				</h:commandLink>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Excluir</f:facet>
 				<h:commandLink value="Excluir" action="#{pessoaBean.deletar}">
-					<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}" />
+					<f:setPropertyActionListener value="#{pessoa}"
+						target="#{pessoaBean.pessoa}" />
 				</h:commandLink>
 			</h:column>
 		</h:dataTable>
 	</h:form>
 	<f:metadata>
-		<f:event type="preRenderView" listener="#{pessoaBean.carregarPessoas}"/>
+		<f:event type="preRenderView" listener="#{pessoaBean.carregarPessoas}" />
 	</f:metadata>
 </h:body>
 </html>
